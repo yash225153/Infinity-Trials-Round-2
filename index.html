@@ -10,7 +10,7 @@
 <script>
 // EVENT ORGANIZER SETTINGS: customize these two values before publishing.
 const ACCESS_KEY = "SOUL";
-const FINAL_CLUE = "AGENT, YOUR FINAL CLUE AWAITS AT EVENT CONTROL. Replace this text with your real final location or clue before sharing the link.";
+const FINAL_CLUE = "AGENT, YOUR FINAL CLUE AWAITS AT EVENT CONTROL.CONTACT HQ";
 const form=document.getElementById('form'),key=document.getElementById('key'),message=document.getElementById('message'),unlock=document.getElementById('unlock');
 form.addEventListener('submit',function(e){e.preventDefault();if(key.value.trim().toUpperCase()===ACCESS_KEY){message.textContent='';document.getElementById('clue').textContent=FINAL_CLUE;unlock.style.display='block';form.querySelector('button').textContent='ACCESS AUTHORIZED';form.querySelector('button').disabled=true;key.disabled=true;unlock.scrollIntoView({behavior:'smooth',block:'nearest'});}else{message.textContent='ACCESS DENIED. Recheck the decoded transmission and try again.';key.select();}});
 </script></body></html>
