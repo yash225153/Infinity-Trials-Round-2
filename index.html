@@ -1,16 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080b13"><title>Infinity Trials | S.H.I.E.L.D. Secure Terminal</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080b13">
+<meta name="description" content="A one-agent S.H.I.E.L.D. cipher challenge. Decode the intercepted transmission to reveal the access key.">
+<title>Infinity Trials | S.H.I.E.L.D. Secure Terminal</title>
 <style>
-:root{--bg:#080b13;--panel:#101725;--line:#29384b;--gold:#e4b85c;--cyan:#77d8ed;--muted:#9aa9bd;--white:#f2f5fa;--red:#ff6565}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -20%,#263958 0%,#0d1422 42%,var(--bg) 76%);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;padding:22px;letter-spacing:.01em}.shell{width:min(100%,560px)}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px;font-size:.72rem;letter-spacing:.17em;color:var(--muted);text-transform:uppercase}.status{color:#a5efc1;display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:50%;background:#66e59a;box-shadow:0 0 12px #66e59a}.panel{border:1px solid #34455c;background:linear-gradient(155deg,rgba(19,29,45,.97),rgba(8,13,23,.98));border-radius:18px;overflow:hidden;box-shadow:0 24px 80px #0008}.bar{height:4px;background:linear-gradient(90deg,#a72a34,#e4b85c,#77d8ed)}.content{padding:clamp(22px,6vw,36px)}.emblem{width:60px;height:60px;border:1px solid #5c6c7d;border-radius:50%;display:grid;place-items:center;margin:0 auto 19px;color:var(--gold);font-size:1.7rem;box-shadow:0 0 28px #e4b85c18}.eyebrow{text-align:center;color:var(--gold);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase}.title{text-align:center;font-size:clamp(1.65rem,7vw,2.25rem);line-height:1.1;letter-spacing:.04em;margin:10px 0 9px}.subtitle{text-align:center;color:var(--muted);font-size:.92rem;line-height:1.6;margin:0 auto 26px;max-width:390px}.divider{height:1px;background:var(--line);margin:24px 0}.label{font-size:.7rem;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin-bottom:10px}.cipher{border:1px solid #30465b;background:#09111d;border-radius:12px;padding:18px;text-align:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:clamp(1.02rem,4vw,1.28rem);letter-spacing:.09em;line-height:1.8;overflow-wrap:anywhere;color:#dceeff}.hint{font-size:.82rem;color:var(--muted);line-height:1.55;margin:12px 0 0}.fieldlabel{display:block;color:#c5d0df;font-size:.82rem;margin-bottom:8px}input{width:100%;padding:15px 14px;background:#070d16;color:white;border:1px solid #3a4a60;border-radius:10px;font:inherit;outline:none;text-transform:uppercase;letter-spacing:.14em}input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #77d8ed1b}button{width:100%;margin-top:12px;padding:15px;border:0;border-radius:10px;background:linear-gradient(100deg,#d8aa4c,#f0d18a);color:#15130e;font-weight:800;letter-spacing:.09em;text-transform:uppercase;font-size:.82rem;cursor:pointer}button:hover{filter:brightness(1.07)}button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.message{min-height:22px;font-size:.83rem;margin-top:12px;color:var(--red);text-align:center}.unlock{display:none;border:1px solid #47795e;background:linear-gradient(145deg,#10251f,#0b1717);border-radius:12px;padding:20px;margin-top:18px}.unlock h2{font-size:1rem;color:#a5efc1;letter-spacing:.1em;margin:0 0 12px}.clue{font-size:1.04rem;line-height:1.7;color:#f5f8fc}.foot{text-align:center;color:#718198;font-size:.7rem;letter-spacing:.1em;margin:17px 0 0}.smallprint{color:#77879c;font-size:.72rem;line-height:1.5;text-align:center;margin-top:14px}@media(prefers-reduced-motion:no-preference){.panel{animation:rise .55s ease-out}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}}
-</style></head>
-<body><main class="shell"><div class="topline"><span>INFINITY TRIALS // 2026</span><span class="status"><i class="dot"></i> SYSTEM ONLINE</span></div><section class="panel"><div class="bar"></div><div class="content"><div class="emblem" aria-hidden="true">⬡</div><div class="eyebrow">Strategic Homeland Intervention</div><h1 class="title">S.H.I.E.L.D. TERMINAL</h1><p class="subtitle">A classified transmission has been intercepted. Decode the message, identify the access key, and retrieve the final mission clue.</p><div class="label">01 / Intercepted transmission</div><div class="cipher" aria-label="Encrypted message">HQWHU WKH SDVVZRUG<br>VRXO</div><p class="hint"><strong>Analyst hint:</strong> The enemy shifted every letter forward by three. Reverse the shift to read the transmission.</p><div class="divider"></div><form id="form"><label class="fieldlabel" for="key">02 / Enter the access key</label><input id="key" name="key" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ENTER DECODED PASSWORD" required aria-describedby="message"><button type="submit">Authenticate access ↗</button><div class="message" id="message" role="status" aria-live="polite"></div></form><section class="unlock" id="unlock" aria-live="polite"><h2>✓ ACCESS GRANTED — MISSION CLUE DECLASSIFIED</h2><div class="clue" id="clue"></div></section><p class="smallprint">Unauthorized access attempts are logged. Stay sharp, agent.</p></div></section><div class="foot">S.H.I.E.L.D. SECURE NETWORK · INFINITY TRIALS</div></main>
+:root{--bg:#080b13;--line:#29384b;--gold:#e4b85c;--cyan:#77d8ed;--muted:#9aa9bd;--white:#f2f5fa;--red:#ff6565;--green:#a5efc1}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -20%,#263958 0%,#0d1422 42%,var(--bg) 76%);color:var(--white);font-family:"Segoe UI",Tahoma,sans-serif;display:flex;align-items:center;justify-content:center;padding:22px;letter-spacing:.01em}body:before{position:fixed;inset:0;z-index:-1;background:repeating-linear-gradient(0deg,transparent 0 3px,#b8d8ff05 4px 5px);content:"";pointer-events:none}.shell{width:min(100%,560px)}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:15px;color:var(--muted);font:700 .68rem "Cascadia Code",Consolas,monospace;letter-spacing:.12em}.wordmark{color:var(--white);text-decoration:none}.wordmark span{color:var(--muted)}.status{display:flex;align-items:center;gap:7px;color:var(--green)}.dot{width:7px;height:7px;border-radius:50%;background:#66e59a;box-shadow:0 0 12px #66e59a}.panel{border:1px solid #34455c;border-radius:8px;overflow:hidden;background:linear-gradient(155deg,rgba(19,29,45,.97),rgba(8,13,23,.98));box-shadow:0 24px 80px #0008}.bar{height:4px;background:linear-gradient(90deg,#a72a34,var(--gold),var(--cyan))}.content{padding:clamp(22px,6vw,36px)}.emblem{width:60px;height:60px;border:1px solid #5c6c7d;border-radius:50%;display:grid;place-items:center;margin:0 auto 19px;color:var(--gold);font-size:1.7rem;box-shadow:0 0 28px #e4b85c18}.eyebrow{text-align:center;color:var(--gold);font:700 .68rem "Cascadia Code",Consolas,monospace;letter-spacing:.2em;text-transform:uppercase}.title{text-align:center;font:800 clamp(1.65rem,7vw,2.25rem)/1.1 "Bahnschrift SemiCondensed","Arial Narrow",Impact,sans-serif;letter-spacing:.04em;margin:10px 0 9px}.subtitle{text-align:center;color:var(--muted);font-size:.91rem;line-height:1.6;margin:0 auto 25px;max-width:400px}.question-label{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;color:var(--cyan);font:700 .67rem "Cascadia Code",Consolas,monospace;letter-spacing:.12em;text-transform:uppercase}.single-agent{color:#8393a9;font-size:.6rem}.cipher{border:1px solid #30465b;background:#09111d;border-radius:5px;padding:18px;text-align:center;font:clamp(1.02rem,4vw,1.25rem)/1.8 "Cascadia Code",Consolas,monospace;letter-spacing:.09em;overflow-wrap:anywhere;color:#dceeff}.hint{font-size:.81rem;color:var(--muted);line-height:1.55;margin:12px 0 0}.divider{height:1px;background:var(--line);margin:24px 0}.fieldlabel{display:block;color:#c5d0df;font-size:.82rem;margin-bottom:8px}input{width:100%;padding:15px 14px;background:#070d16;color:white;border:1px solid #3a4a60;border-radius:4px;font:inherit;outline:none;text-transform:uppercase;letter-spacing:.12em}input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #77d8ed1b}button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding:15px 16px;border:1px solid #f0d18a;border-radius:4px;background:linear-gradient(100deg,#d8aa4c,#f0d18a);color:#15130e;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.77rem;cursor:pointer}button:hover:not(:disabled){filter:brightness(1.07)}button:disabled{cursor:default;opacity:.78}button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.message{min-height:22px;font-size:.82rem;margin-top:12px;color:var(--red);text-align:center}.unlock{border:1px solid #47795e;background:linear-gradient(145deg,#10251f,#0b1717);border-radius:5px;padding:18px;margin-top:18px}.unlock h2{font-size:.9rem;color:var(--green);letter-spacing:.07em;margin:0 0 12px}.clue{font-size:1rem;line-height:1.7;color:#f5f8fc}.smallprint{color:#77879c;font-size:.7rem;line-height:1.5;text-align:center;margin-top:14px}.foot{text-align:center;color:#718198;font:700 .63rem "Cascadia Code",Consolas,monospace;letter-spacing:.1em;margin:16px 0 0}.foot span{color:var(--gold)}@media(prefers-reduced-motion:no-preference){.panel{animation:rise .45s ease-out}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}@media(max-width:420px){body{padding:15px 12px}.topline{font-size:.59rem;letter-spacing:.05em}.question-label{align-items:flex-start;flex-direction:column;gap:5px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="topline">
+    <a class="wordmark" href="#terminal" aria-label="Infinity Trials">INFINITY TRIALS <span>// 2026</span></a>
+    <span class="status"><i class="dot" aria-hidden="true"></i> SYSTEM ONLINE</span>
+  </header>
+  <section class="panel" id="terminal" aria-labelledby="terminal-title">
+    <div class="bar"></div>
+    <div class="content">
+      <div class="emblem" aria-hidden="true">⬡</div>
+      <div class="eyebrow">Strategic Homeland Intervention</div>
+      <h1 class="title" id="terminal-title">S.H.I.E.L.D. TERMINAL</h1>
+      <p class="subtitle">One agent. One question. Decode the intercepted ciphertext to reveal the sentence.</p>
+      <button type="button" id="solve-button"><span>SOLVE</span><span aria-hidden="true">↗</span></button>
+      <section id="challenge" hidden aria-live="polite">
+        <div class="divider"></div>
+        <div class="question-label"><span>QUESTION 01 / 01 · DECRYPT THE CIPHERTEXT</span><span class="single-agent">SINGLE AGENT</span></div>
+        <p class="hint" id="question-prompt"></p>
+        <div class="cipher" id="scrambled-text" aria-label="Ciphertext"></div>
+        <p class="hint"><strong>Analyst hint:</strong> Each letter is shifted forward by three places. Shift each letter back three to decode it.</p>
+        <form id="form">
+          <label class="fieldlabel" for="key">Enter the decoded sentence</label>
+          <input id="key" name="key" autocomplete="off" autocapitalize="sentences" spellcheck="false" placeholder="TYPE THE DECODED SENTENCE" required aria-describedby="message">
+          <button type="submit"><span>Submit answer</span><span aria-hidden="true">↗</span></button>
+          <div class="message" id="message" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+      <section class="unlock" id="unlock" aria-live="polite" hidden>
+        <h2>✓ CORRECT — ACCESS GRANTED</h2>
+        <div class="clue" id="clue"></div>
+      </section>
+      <p class="smallprint">This is a single-player challenge. The answer locks after one correct submission.</p>
+    </div>
+  </section>
+  <footer class="foot">S.H.I.E.L.D. SECURE NETWORK <span>·</span> INFINITY TRIALS</footer>
+</main>
 <script>
-// EVENT ORGANIZER SETTINGS: customize these two values before publishing.
-const ACCESS_KEY = "SOUL";
+// Each visit presents one randomly selected Caesar-cipher sentence.
+const QUESTIONS = [
+  { answer: "Tony Stark is Iron Man.", prompt: "Decode the sentence about Tony Stark's hero identity." },
+  { answer: "The Mind Stone powers Vision.", prompt: "Decode the sentence about the stone in Vision's forehead." },
+  { answer: "Thor is the God of Thunder.", prompt: "Decode the sentence describing the Asgardian Avenger." },
+  { answer: "The Nova Corps protects Xandar.", prompt: "Decode the sentence about Xandar's peacekeepers." },
+  { answer: "Wakanda is home to vibranium.", prompt: "Decode the sentence about Wakanda's rare resource." },
+  { answer: "Natasha Romanoff is the Black Widow.", prompt: "Decode the sentence naming the former spy Avenger." },
+  { answer: "Rocket is a member of the Guardians.", prompt: "Decode the sentence describing the raccoon-like Guardian." },
+  { answer: "Peter Quill calls himself Star-Lord.", prompt: "Decode the sentence about Peter Quill's chosen name." },
+  { answer: "Clint Barton is also known as Hawkeye.", prompt: "Decode the sentence naming the Avengers' archer." },
+  { answer: "Shuri leads Wakanda's technological research.", prompt: "Decode the sentence about Wakanda's brilliant inventor." },
+  { answer: "Thanos seeks all six Infinity Stones.", prompt: "Decode the sentence about the Mad Titan's goal." },
+  { answer: "The Tesseract contains the Space Stone.", prompt: "Decode the sentence about the blue Infinity Stone." },
+  { answer: "Peter Parker is Spider-Man.", prompt: "Decode the sentence revealing the young hero's identity." },
+  { answer: "Sam Wilson carries Captain America's shield.", prompt: "Decode the sentence about Steve Rogers's friend." },
+  { answer: "Loki is Thor's adopted brother.", prompt: "Decode the sentence about the Asgardian trickster." }
+];
 const FINAL_CLUE = "AGENT, YOUR FINAL CLUE AWAITS AT EVENT CONTROL. CONTACT HQ";
-const form=document.getElementById('form'),key=document.getElementById('key'),message=document.getElementById('message'),unlock=document.getElementById('unlock');
-form.addEventListener('submit',function(e){e.preventDefault();if(key.value.trim().toUpperCase()===ACCESS_KEY){message.textContent='';document.getElementById('clue').textContent=FINAL_CLUE;unlock.style.display='block';form.querySelector('button').textContent='ACCESS AUTHORIZED';form.querySelector('button').disabled=true;key.disabled=true;unlock.scrollIntoView({behavior:'smooth',block:'nearest'});}else{message.textContent='ACCESS DENIED. Recheck the decoded transmission and try again.';key.select();}});
-</script></body></html>
+const form = document.getElementById("form");
+const key = document.getElementById("key");
+const message = document.getElementById("message");
+const unlock = document.getElementById("unlock");
+const solveButton = document.getElementById("solve-button");
+const challenge = document.getElementById("challenge");
+let selectedQuestion = null;
+
+function encodeCaesar(plainText) {
+  return plainText.toUpperCase().replace(/[A-Z]/g, (letter) => {
+    return String.fromCharCode(((letter.charCodeAt(0) - 65 + 3) % 26) + 65);
+  });
+}
+
+solveButton.addEventListener("click", () => {
+  selectedQuestion = QUESTIONS[Math.floor(Math.random() * QUESTIONS.length)];
+  document.getElementById("question-prompt").textContent = selectedQuestion.prompt;
+  document.getElementById("scrambled-text").textContent = encodeCaesar(selectedQuestion.answer);
+  challenge.hidden = false;
+  solveButton.disabled = true;
+  solveButton.querySelector("span").textContent = "QUESTION READY";
+  key.focus();
+});
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const normalize = (text) => text.toUpperCase().replace(/[^A-Z0-9 ]/g, "").replace(/\s+/g, " ").trim();
+  if (!selectedQuestion || normalize(key.value) !== normalize(selectedQuestion.answer)) {
+    message.textContent = "NOT QUITE. Decrypt the ciphertext and try again.";
+    key.select();
+    return;
+  }
+  message.textContent = "";
+  document.getElementById("clue").textContent = FINAL_CLUE;
+  unlock.hidden = false;
+  form.querySelector("button").disabled = true;
+  key.disabled = true;
+  unlock.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+</script>
+</body>
+</html>
